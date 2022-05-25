@@ -1,5 +1,3 @@
-const path = function(file) {
-  return `files/${file}`;
-}
+import player from './player'
 
 window.addEventListener("load", player.start());

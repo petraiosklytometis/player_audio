@@ -1,4 +1,4 @@
-window.audios = [
+export default [
   {
     title: "Acorda Pedrinho",
     artist: "Jovem Dionisio",
