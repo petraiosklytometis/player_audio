@@ -8,9 +8,11 @@ export default {
   currentPlaying: 0,
   start() {
     elements.get.call(this);
-    
     this.update();
     this.audio.onended = () => this.next(); 
+  },
+  play() {
+    this.audio.play();
   },
   next() {
     this.currentPlaying++;
@@ -24,7 +26,7 @@ export default {
     this.cover.style.background = `url('${path(this.currentAudio.cover)}') no-repeat center center / cover`;
     this.title.innerText = this.currentAudio.title;
     this.artist.innerText = this.currentAudio.artist;
-    this.audio.src = path(this.currentAudio.file);
+    elements.createAudioElement.call(this, path(this.currentAudio.file));
   },
   restart() {
     this.currentPlaying = 0;
